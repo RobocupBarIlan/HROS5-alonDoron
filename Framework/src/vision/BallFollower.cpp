@@ -193,13 +193,13 @@ void BallFollower::Process(Point2D ball_pos)
 						m_FBStep += m_UnitFBStep;
 					else if (m_FBStep > m_GoalFBStep)
 						m_FBStep = m_GoalFBStep;
-					Walking::GetInstance()->X_MOVE_AMPLITUDE = m_FBStep;
+					Walking::GetInstance()->X_MOVE_AMPLITUDE = -m_FBStep;
 
 					if (m_RLTurn < m_GoalRLTurn)
 						m_RLTurn += m_UnitRLTurn;
 					else if (m_RLTurn > m_GoalRLTurn)
 						m_RLTurn -= m_UnitRLTurn;
-					Walking::GetInstance()->A_MOVE_AMPLITUDE = m_RLTurn;
+					Walking::GetInstance()->A_MOVE_AMPLITUDE = -m_RLTurn;
 
 					if (DEBUG_PRINT == true)
 						fprintf(stderr, " (FB:%.1f RL:%.1f)", m_FBStep, m_RLTurn);
